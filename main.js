@@ -49,11 +49,89 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+//Palette colors=======
+const colorPalette = document.querySelector(".palette");
 
+//Brush element query  ========
+const paintBrush = document.querySelector(".current-brush");
 
+//Squares element==============
+const canvasSquare = document.querySelector(".canvas");
 /****************************
  * EVENT LISTENER FUNCTIONS *
 ****************************/
+
+
+
+colorPalette.addEventListener("click", onClick);
+canvasSquare.addEventListener("click", onClick2);
+function onClick(event) {
+  const colorChange = event.target.classList[1];
+
+  
+  if (paintBrush.classList[1] ==="color-2") {
+    paintBrush.classList.remove('color-2');
+    paintBrush.classList.add(colorChange);
+  } else if (paintBrush.classList[1] ==="color-1") {
+    paintBrush.classList.remove('color-1');
+    paintBrush.classList.add(colorChange);
+  } else if (paintBrush.classList[1]==="color-3") {
+    paintBrush.classList.remove("color-3");
+    paintBrush.classList.add(colorChange);
+  } else if (paintBrush.classList[1]==="color-4") {
+    paintBrush.classList.remove("color-4");
+    paintBrush.classList.add(colorChange);
+  } else if (paintBrush.classList[1]==="color-5") {
+    paintBrush.classList.remove("color-5");
+    paintBrush.classList.add(colorChange);
+  }console.log(paintBrush)
+}
+  function onClick2(event){
+
+const canvasChange = event.target.classList[1]
+   // if(canvasChange === "color-5"){
+    canvasSquare.classList.remove(canvasChange)
+    canvasSquare.classList.add(paintBrush)
+    //canvasChange.classList.add(paintBrush)
+   // }
+
+console.log(canvasChange)
+console.log(paintBrush)
+  }
+
+  //paintBrush.push(event.target.classList[1])
+
+//====================================================
+
+
+
+  //console.log(event.target.classList[1])
+  //console.log(paintBrush)
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //paintBrush.classList.remove('selected');
+  //console.log(paintBrush)
+  //console.log(colorPalette)
+
+
+
+
+
+
+
+
+
 
 // Now add some functions to handle clicking one particular square
 // and clicking one particular palette color. You can leave them
