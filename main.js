@@ -62,9 +62,11 @@ const canvasSquare = document.querySelector(".canvas");
 ****************************/
 
 
-
+//Color palette event listener
 colorPalette.addEventListener("click", onClick);
-canvasSquare.addEventListener("click", onClick2);
+
+//function to remove color from brush then add selected color to brush.
+
 function onClick(event) {
   const colorChange = event.target.classList[1];
 
@@ -86,12 +88,22 @@ function onClick(event) {
     paintBrush.classList.add(colorChange);
   }console.log(paintBrush)
 }
+
+
+//======
+
+//Event listner for paint canvas
+
+canvasSquare.addEventListener("click", onClick2);
+  
+  //Function to remove color from canvas and replace with pre-selected color from brush.
+  
   function onClick2(event){
 
 const canvasChange = event.target.classList[1]
    // if(canvasChange === "color-5"){
     canvasSquare.classList.remove(canvasChange)
-    canvasSquare.classList.add(paintBrush)
+    canvasSquare.classList.add(paintBrush.classList[1])
     //canvasChange.classList.add(paintBrush)
    // }
 
